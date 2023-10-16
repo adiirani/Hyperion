@@ -26,7 +26,7 @@ Here're some of the project's best features:
 
 <p>5. Voila!</p>
 
-<h2>🍰 Contribution Guidelines:</h2>
+
 
 <h2>🛡️ License:</h2>
 
