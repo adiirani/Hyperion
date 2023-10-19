@@ -20,9 +20,9 @@ Here're some of the project's best features:
 
 <p>2. Put the source files into your project folder.</p>
 
-<p>3. Modify the source files to suit your needs.</p>
+<p>3. Modify the source files to suit your needs (if applicable)</p>
 
-<p>4. Include the source files you want.</p>
+<p>4. Include the header files you want from the dedicated headers folder in each module.</p>
 
 <p>5. Voila!</p>
 
