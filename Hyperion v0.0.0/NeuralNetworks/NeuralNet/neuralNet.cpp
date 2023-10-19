@@ -81,60 +81,62 @@ public:
 		layers.push_back(std::move(currentLayer));
 	}
 
-	void trainTest(const std::vector<std::vector<double>>& data, double split, LossFunction lossType) {
-		if (split <= 0.0 || split >= 1.0) {
-			throw std::invalid_argument("Invalid split value. The split value should be in the range (0, 1).");
-		}
+	void trainTest(const std::vector<std::vector<double>>& data, const std::vector<std::vector<double>>& labels, double split, LossFunction lossType) {
+    		if (split <= 0.0 || split >= 1.0) {
+        		throw std::invalid_argument("Invalid split value. The split value should be in the range (0, 1).");
+    		}
 
 		// Split the data into training and testing sets
 		int numDataPoints = data.size();
 		int splitIndex = static_cast<int>(split * numDataPoints);
 		std::vector<std::vector<double>> trainingData(data.begin(), data.begin() + splitIndex);
+		std::vector<std::vector<double>> trainingLabels(labels.begin(), labels.begin() + splitIndex);
 		std::vector<std::vector<double>> testingData(data.begin() + splitIndex, data.end());
-
+		std::vector<std::vector<double>> testingLabels(labels.begin() + splitIndex, labels.end());
+		
 		std::cout << "Training neural network with " << trainingData.size() << " data points..." << std::endl;
-
+		
 		double learningRate = 0.01;
 		int numEpochs = 100;
-
+		
 		for (int epoch = 1; epoch <= numEpochs; ++epoch) {
 			double totalLoss = 0.0;
-
-			for (const auto& dataPoint : trainingData) {
-				std::vector<double> input(dataPoint.begin(), dataPoint.end() - 1);
-				std::vector<double> target(dataPoint.end() - 1, dataPoint.end());
-				std::vector<double> predicted = forwardPropagation(input);
-
-				double loss = lossFunc(predicted, target, lossType);
-				totalLoss += loss;
-
-				std::vector<double> gradient = backwardPropagation(input, target, learningRate);
+		
+			for (size_t i = 0; i < trainingData.size(); ++i) {
+			    std::vector<double> input = trainingData[i];
+			    std::vector<double> target = trainingLabels[i];
+			    std::vector<double> predicted = forwardPropagation(input);
+			
+			    double loss = lossFunc(predicted, target, lossType);
+			    totalLoss += loss;
+			
+			    std::vector<double> gradient = backwardPropagation(target, predicted, learningRate);
 			}
-
+		
 			std::cout << "Epoch " << epoch << " Loss: " << totalLoss << std::endl;
 		}
-
+		
 		std::cout << "Testing neural network with " << testingData.size() << " data points..." << std::endl;
-
+		
 		int numCorrect = 0;
-
-		for (const auto& dataPoint : testingData) {
-			std::vector<double> input(dataPoint.begin(), dataPoint.end() - 1);
-			std::vector<double> target(dataPoint.end() - 1, dataPoint.end());
+		
+		for (size_t i = 0; i < testingData.size(); ++i) {
+			std::vector<double> input = testingData[i];
+			std::vector<double> target = testingLabels[i];
 			std::vector<double> predicted = forwardPropagation(input);
-
+		
 			if (target[0] == 1 && predicted[0] >= 0.5) {
-				numCorrect++;
-			}
-			else if (target[0] == 0 && predicted[0] < 0.5) {
-				numCorrect++;
+		    		numCorrect++;
+			} else if (target[0] == 0 && predicted[0] < 0.5) {
+		    		numCorrect++;
 			}
 		}
-
+		
 		double accuracy = static_cast<double>(numCorrect) / testingData.size();
-
+		
 		std::cout << "Test Accuracy: " << accuracy * 100 << "%" << std::endl;
 	}
+
 
 	void save(const std::string& filename) {
 		std::ofstream file(filename, std::ios::out | std::ios::binary);
