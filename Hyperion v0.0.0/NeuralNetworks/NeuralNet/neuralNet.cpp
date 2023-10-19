@@ -36,9 +36,8 @@ private:
 	}
 
 public:
-	neuralNet(LossFunction lossType) {
-		std::cout << "initializing neural network.";
-
+	neuralNet() {
+		std::cout << "Initializing neural network.";
 	}
 
 	void addLayer(int inSize, int outSize, LayerType type, ActivationFunction activationType, int numFilters = -1, int kernelFilterSize = -1, int step = -1, double dropoutRate = -1.0) {
