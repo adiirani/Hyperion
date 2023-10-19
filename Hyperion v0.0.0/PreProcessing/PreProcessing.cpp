@@ -2,9 +2,9 @@
 
 class encoders {
 public:
-    std::vector<int> label(const std::vector<std::string>& input) {
-        std::unordered_map<std::string, int> encoding;
-        std::vector<int> result;
+    std::vector<double> label(const std::vector<std::string>& input) {
+        std::unordered_map<std::string, double> encoding;
+        std::vector<double> result;
 
         int index = 1;
         for (const std::string& category : input) {
@@ -17,26 +17,26 @@ public:
         return result;
     }
 
-    std::vector<std::vector<int>> oneHot(const std::vector<std::string>& input) {
-        std::unordered_map<std::string, int> encoding;
-        std::vector<std::vector<int>> result;
+    std::vector<std::vector<double>> oneHot(const std::vector<std::string>& input) {
+        std::unordered_map<std::string, double> encoding;
+        std::vector<std::vector<double>> result;
 
         int index = 0;
         for (const std::string& category : input) {
             if (encoding.find(category) == encoding.end()) {
                 encoding[category] = index++;
             }
-            std::vector<int> ohVector(encoding.size(), 0);
-            ohVector[encoding[category]] = 1;
+            std::vector<double> ohVector(encoding.size(), 0.0);
+            ohVector[encoding[category]] = 1.0;
             result.push_back(ohVector);
         }
 
         return result;
     }
 
-    std::vector<int> ordinal(const std::vector<std::string>& input, const std::vector<std::string>& order) {
-        std::map<std::string, int> encoding;
-        std::vector<int> results;
+    std::vector<double> ordinal(const std::vector<std::string>& input, const std::vector<std::string>& order) {
+        std::map<std::string, double> encoding;
+        std::vector<double> results;
 
         for (int i = 0; i < order.size(); i++) {
             encoding[order[i]] = i;
