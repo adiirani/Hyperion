@@ -1,5 +1,10 @@
 Hyperion
 Copyright 2023- Adi Irani
 
-This product includes software developed at
-The Apache Software Foundation (/).
+Hyperion is an open-source project that includes code developed by various contributors. This notice is provided to inform users and contributors about the project's licensing and to acknowledge any third-party dependencies that may have their own copyright and licensing terms.
+
+1. **Copyright and Licensing**:
+   - Hyperion is Copyright [Year] [Your Name or Organization Name]. It is licensed under the [choose the license under which Hyperion is distributed, e.g., MIT License].
+   - Marginal portions of Hyperion may be derived from AI-generated code produced by ChatGPT, an AI language model developed by OpenAI. This AI-generated code is subject to OpenAI's specific usage policies and licensing terms. Please refer to OpenAI's documentation and policies for more information on the usage and licensing of ChatGPT-generated code.
+
+It's crucial to adhere to the licensing terms and policies of Hyperion, OpenAI, and any third-party dependencies to ensure compliance and responsible use of the software. This NOTICE file aims to promote transparency regarding the project's licensing and the potential presence of third-party code with its own copyright and licensing terms.
