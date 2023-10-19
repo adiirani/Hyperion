@@ -17,14 +17,6 @@ class neuralNet {
 private:
 	std::vector<std::unique_ptr<layer>> layers;
 
-	std::vector<double> forwardPropagation(const std::vector<double>& input) {
-		std::vector<double> layerInput = input;
-		for (const auto& currLayer : layers) {
-			layerInput = currLayer->forward(layerInput);
-		}
-		return layerInput;  // Return the final output.
-	}
-
 	std::vector<double> backwardPropagation(const std::vector<double>& target, const std::vector<double>& outputGradient, double learningRate) {
 		int numLayers = layers.size();
 		std::vector<double> layerError = outputGradient;
@@ -38,6 +30,14 @@ private:
 public:
 	neuralNet() {
 		std::cout << "Initializing neural network.";
+	}
+
+	std::vector<double> forwardPropagation(const std::vector<double>& input) {
+		std::vector<double> layerInput = input;
+		for (const auto& currLayer : layers) {
+			layerInput = currLayer->forward(layerInput);
+		}
+		return layerInput;  // Return the final output.
 	}
 
 	void addLayer(int inSize, int outSize, LayerType type, ActivationFunction activationType, int numFilters = -1, int kernelFilterSize = -1, int step = -1, double dropoutRate = -1.0) {
