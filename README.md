@@ -1,6 +1,6 @@
 ![Hyperion](https://socialify.git.ci/adiirani/Hyperion/image?description=1&descriptionEditable=AI%20for%20programmers%2C%20by%20programmers.&font=Source%20Code%20Pro&forks=1&issues=1&logo=https%3A%2F%2Fi.ibb.co%2FxHBD6Mj%2FUntitled-design.gif&name=1&owner=1&pattern=Formal%20Invitation&pulls=1&stargazers=1&theme=Auto)
 
-<p id="description">Fully hackable versatile neural network library suitable for beginners and experts alike. Written in C++. Full project coming soon...</p>
+<p id="description">Fully hackable versatile neural network library suitable for beginners and experts alike. Written in C++. MVP OUT NOW</p>
 
   
   
