@@ -31,7 +31,7 @@ Here're some of the project's best features:
 <h2>📗 Documentation:</h2>
 
 <p>Documentation for this project can be found here:</p>
-<p>https://daemmerung-systems.gitbook.io/hyperion-mvp-documentation/</p>
+<p>https://dammerung.gitbook.io/hyperion-mvp-documentation/</p>
 
 
 <h2>🛡️ License:</h2>
