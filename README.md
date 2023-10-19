@@ -1,4 +1,4 @@
-<p align="center"><img src="https://socialify.git.ci/adiirani/Hyperion/image?description=1&amp;descriptionEditable=AI%2C%20your%20way&amp;font=Source%20Code%20Pro&amp;forks=1&amp;issues=1&amp;language=1&amp;logo=https%3A%2F%2Fi.gifer.com%2Fembedded%2Fdownload%2F7Td.gif&amp;name=1&amp;owner=1&amp;pattern=Formal%20Invitation&amp;pulls=1&amp;stargazers=1&amp;theme=Dark" alt="project-image"></p>
+![Hyperion](https://socialify.git.ci/adiirani/Hyperion/image?description=1&descriptionEditable=AI%20for%20programmers%2C%20by%20programmers.&font=Source%20Code%20Pro&forks=1&issues=1&logo=https%3A%2F%2Fi.ibb.co%2FxHBD6Mj%2FUntitled-design.gif&name=1&owner=1&pattern=Formal%20Invitation&pulls=1&stargazers=1&theme=Auto)
 
 <p id="description">Fully hackable versatile neural network library suitable for beginners and experts alike. Written in C++. Full project coming soon...</p>
 
