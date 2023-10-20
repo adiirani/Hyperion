@@ -15,4 +15,6 @@ public:
 
 	void setData(std::string token) override;
 
+};
+
 #endif // !FULLCONN_H
