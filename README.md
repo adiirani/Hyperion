@@ -18,11 +18,11 @@ Here're some of the project's best features:
 
 <p>1. Download.</p>
 
-<p>2. Put the source files into your project folder.</p>
+<p>2. Build with cmake.</p>
 
-<p>3. Modify the source files to suit your needs (if applicable)</p>
+<p>3. Open the solution in your IDE of choice and build it. </p>
 
-<p>4. Include the header files you want from the dedicated headers folder in each module.</p>
+<p>4. Include the header files you want from the built library (refer to docs to see whats available).</p>
 
 <p>5. Voila!</p>
 
