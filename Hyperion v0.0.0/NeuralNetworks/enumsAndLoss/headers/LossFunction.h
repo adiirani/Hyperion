@@ -1,6 +1,8 @@
 #ifndef LOSSFUNCTION_H
 #define LOSSFUNCTION_H
 
+#include <vector>
+
 enum LossFunction {
 	MSE,
 	MAE,
