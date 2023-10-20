@@ -52,7 +52,7 @@ public:
 
 class vectorizers {
 private:
-    std::unordered_map<int, std::vector<std::string>> reverseDictionary;
+    std::unordered_map<double, std::vector<std::string>> reverseDictionary;
 
     std::vector<std::string> tokenize(const std::string& input, const std::set<std::string>& stopWords) {
         std::string tokenText = input;
@@ -79,8 +79,8 @@ private:
     }
 
 public:
-    std::vector<std::vector<int>> count(const std::vector<std::string>& input, const std::set<std::string>& stopWords) {
-        std::vector<std::vector<int>> result;
+    std::vector<std::vector<double>> count(const std::vector<std::string>& input, const std::set<std::string>& stopWords) {
+        std::vector<std::vector<double>> result;
 
         for (const std::string& text : input) {
             std::vector<int> documentVector;
@@ -164,8 +164,8 @@ public:
         return result;
     }
 
-    std::vector<std::vector<int>> hashing(const std::vector<std::string>& input, const std::set<std::string>& stopWords) {
-        std::vector<std::vector<int>> result;
+    std::vector<std::vector<double>> hashing(const std::vector<std::string>& input, const std::set<std::string>& stopWords) {
+        std::vector<std::vector<double>> result;
 
         for (const std::string& document : input) {
             std::vector<int> documentVector;
