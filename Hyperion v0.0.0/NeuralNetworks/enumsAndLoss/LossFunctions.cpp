@@ -1,6 +1,6 @@
 #include "./headers/LossFunction.h"
 #include <cmath>
-#include <vector>
+
 
 double lossFunc(std::vector<double> predicted, std::vector<double> actual, LossFunction type) {
 	int n = predicted.size(); // Assuming predicted and actual vectors have the same length.
